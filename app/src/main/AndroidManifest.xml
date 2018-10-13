@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nerdroco.admin.implicitintentreceiver">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            // Define intent app can handle
+            <intent-filter>
+                // any intent with view actions
+                <action android:name="android.intent.action.VIEW" />
+
+                // any implicit intent
+                <action android:name="android.intent.category.DEFAULT" />
+
+                // request for browsable links from web pages, email, etc.
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                // URIs that contain a scheme of https and the specified host
+                <data android:scheme="http" android:host="developer.android.com" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
